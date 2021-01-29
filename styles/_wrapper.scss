@@ -1,0 +1,53 @@
+@import './colors';
+
+.wrapper {
+    margin-left: 5px;
+    margin-right: 5px;
+    display: grid;
+    /* grid-template-columns: 1fr 2fr 1fr; */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    grid-auto-rows: minmax(300px, auto); /* min 100px but can be more if content demands */
+
+    div {
+        margin-top: .25em;
+    }
+
+}
+
+.imgContainer{
+    position: relative;
+    text-align: center;
+    .centered{
+        opacity: 0;
+    }
+}
+
+.imgContainer:hover{
+    box-shadow: 0px 0px 5px $hover-color;
+    border: .5pt $hover-color;
+    border-style: outset;
+    .centered{
+        transition: 1s;
+        opacity: 100;
+    }
+}
+
+.centered{
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    width: 100px;
+    height: 20px;
+    background-color: $header-bg-color;
+ 
+    a{
+        color: $bright-color;
+        text-decoration: none; 
+    }
+    a:hover{
+        color: $hover-color;
+    }
+}
+
